@@ -1,0 +1,133 @@
+Context: I want to build a portfolio website from my LinkedIn profile. Use the Playwright plugin to visit my profile and extract everything useful.
+
+Input: linkedin url is https://www.linkedin.com/in/umar-khan-5b3948122/
+
+Instruction:
+1. Open the URL with Playwright. If it's not logged in and LinkedIn shows a 
+   login wall or truncated content, tell me clearly rather than guessing at 
+   what's behind it.
+2. Scroll through the full page (including expanding any "see more" or 
+   "show all" links) so lazy-loaded sections fully render before extracting.
+3. Extract the following, section by section, exactly as written on the 
+   page — do not paraphrase or invent anything that isn't there:
+   - Name, headline, location, pronouns (if shown)
+   - About / summary section (full text)
+   - Experience: for each role — title, company, employment dates, 
+     location, and the full description/bullet points
+   - Education: school, degree, field, dates, activities/societies if listed
+   - Skills (with endorsement counts if visible)
+   - Licenses & certifications
+   - Projects (title, description, dates, associated skills/links)
+   - Publications
+   - Volunteer experience
+   - Featured section: titles and links/media of anything pinned there
+   - Recommendations received (who wrote them and the full text)
+   - Languages
+   - Profile photo and banner image URLs
+
+4. Save everything into a single file called `linkedin-content.html` in this 
+   project, organized with clear headings matching the sections above. 
+   Mark any section that's empty or inaccessible as "Not found" rather 
+   than omitting it silently.
+
+5. Once saved, give me a short summary of:
+   - What sections had strong, usable content
+   - What sections were thin or missing (so I know what to fill in manually)
+   - A suggested portfolio page structure based on what you found (e.g. 
+     Hero/About, Experience timeline, Projects, Skills, Testimonials from 
+     recommendations)
+
+Don't start building the actual site yet — this step is just capture and 
+organization. I'll review linkedin-content.html before we move to design.
+
+
+
+----------------------
+
+
+
+I want to design and build my professional portfolio website using the 
+frontend-design skill. Use two source files in this project:
+
+1. "Umar Khan.pdf" — my CV. This is the PRIMARY source of truth for all 
+   facts: job titles, dates, companies, responsibilities, achievements, 
+   education, and certifications.
+2. "linkedin-content.md" — my extracted LinkedIn profile. Use this ONLY to 
+   fill gaps the CV doesn't cover, and for these specific items:
+   - My profile photo (use the image URL captured from LinkedIn)
+   - Recommendations I've received (full text and author names)
+   - Any project or skill detail present on LinkedIn but missing from the CV
+   - Achievement & Awards
+   - detailed job responsibilities, as CV is summarized 
+  
+
+Where the CV and LinkedIn disagree on a fact (dates, title wording, etc.), 
+the CV wins. Note any meaningful discrepancies to me at the end rather than 
+silently picking one.
+
+CERTIFICATIONS — important distinction:
+Treat only these two as primary/featured certifications, displayed 
+prominently (e.g. as credential badges or a dedicated certifications block):
+- PMP (Project Management Professional)
+- Microsoft Certified: Fabric Analytics Engineer Associate
+These should be clickable items, which when clicked lands visitor on credentials page. 
+All other certificates, courses, or completions from either source should 
+be grouped separately under something like "Additional Training & Courses" 
+— lower visual priority, compact list format, not treated as headline 
+credentials.
+
+CONTENT PRIORITIES — this site's single goal is to maximize my chances of 
+getting hired. Every design and copy decision should serve that. Specifically:
+
+- Lead with impact, not job descriptions. For each role and organization, surface what I 
+  actually delivered/changed/improved — quantify wherever the CV gives 
+  numbers (%, $, time saved, scale). Rewrite dry CV bullet points into 
+  outcome-focused statements, but don't invent numbers that aren't in the 
+  source material.
+- Give key projects their own dedicated section, not buried under each 
+  job — pull out the 3-5 most impressive/relevant projects across my career 
+  and treat them almost like case studies (problem → my role → outcome).
+- Include a recommendations/testimonials section using the LinkedIn 
+  recommendations — pick the strongest 2-4 quotes, attribute each to the 
+  author and their role/relationship to me.
+- Organizations I've worked with should be presented in a way that signals 
+  credibility (company names visible, not just logos-less text) alongside 
+  my specific contribution to each.
+- Include a skills section, but weight it toward skills that show up 
+  repeatedly across my actual project/experience content, not just a raw 
+  list — group by relevance (e.g. technical, domain, tools).
+- The hero section should establish who I am and my value proposition in 
+  under 5 seconds of reading — this is what a recruiter sees first and 
+  decides whether to keep scrolling.
+- Include a clear way to contact me / view my CV / connect on LinkedIn — 
+  make the "next step" for an interested employer obvious.
+
+DESIGN DIRECTION:
+Apply the frontend-design skill's approach — pick a deliberate aesthetic 
+direction that fits a professional-but-distinctive portfolio (not a 
+generic AI-template look), grounded in my actual background and industry. 
+Prioritize clarity, credibility, and fast scannability over decoration — 
+this needs to work for a recruiter skimming on their phone between 
+meetings, not just look good in a screenshot. Use real content throughout; 
+don't leave placeholder text.
+
+OUTPUT:
+Build this as the actual site. 
+Before you finalize, show me the proposed page structure/section order and 
+a summary of what you pulled from each source, so I can sanity-check it 
+before you lock in the design.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
