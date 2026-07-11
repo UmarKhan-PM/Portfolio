@@ -1,0 +1,6 @@
+git config --global user.name "UmarKhan-PM"
+git config --global user.email "umarkhanworks@gmail.com"
+
+git branch -M main
+git remote add origin https://github.com/your-username/portfolio.git
+git push -u origin main
